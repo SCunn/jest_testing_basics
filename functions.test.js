@@ -7,6 +7,30 @@ const functions = require('./functions');
 // toBeTruthy : matches anything when an if statement is true
 // toBeFalsy : matches anything when an if statement is false
 
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log('Database Initialized...');
+// const closeDatabase = () => console.log('Database Closed...');
+const nameCheck = () => console.log('Checking Name....');
+
+describe('Checking Names', () => {
+   beforeEach(() => nameCheck());
+
+   test('User is Joe', () => {
+      const user = 'Joe';
+      expect(user).toBe('Joe');
+   });
+
+   test('User is Jim', () => {
+      const user = 'Jim';
+      expect(user).toBe('Jim');
+   });
+});
+
 
 test('Adds 2 + 2 to equal 4', () => {
    expect(functions.add(2, 2)).toBe(4); 
